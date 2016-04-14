@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication7;
+package controller;
+import model.Petugas;
+import model.Anggota;
 import java.util.*;
 import java.text.*;
+import model.Barang;
 /**
  *
  * @author ac
  */
-public class JavaApplication7 {
+public class Driver {
 
     /**
      * @param args the command line arguments
@@ -36,10 +39,10 @@ public class JavaApplication7 {
         
         Date d1 = new Date();
         
-        p1.peminjam[0].CreatePeminjaman(9001, d1);
-        p1.peminjam[0].riwayatPinjaman[0].addPinjaman(b1, 5);
-        p1.peminjam[0].riwayatPinjaman[0].addPinjaman(b2, 2);
-        p1.peminjam[0].riwayatPinjaman[0].removePinjaman(b1, 2);
+        p1.getPeminjam(0).CreatePeminjaman(9001, d1);
+        p1.getPeminjam(0).riwayatPinjaman[0].addPinjaman(b1, 5);
+        p1.getPeminjam(0).riwayatPinjaman[0].addPinjaman(b2, 2);
+        p1.getPeminjam(0).riwayatPinjaman[0].removePinjaman(b1, 2);
         
         p1.peminjam[1].CreatePeminjaman(9002, d1);
         p1.peminjam[1].riwayatPinjaman[0].addPinjaman(b2,5);
@@ -66,7 +69,7 @@ public class JavaApplication7 {
         System.out.println("");
         System.out.println("Data Peminjam");
         System.out.println("============================");
-        System.out.println("Peminjam 1 : "+a1.nama);
+        System.out.println("Peminjam 1 : "+a1.getNama());
         System.out.println("    Jumlah Peminjaman : "+a3.getJumPinjaman());
         System.out.println("    Status      : "+a1.riwayatPinjaman[0].isStatusPeminjaman());
         System.out.println("    Barang yang dipinjam : ");
@@ -74,7 +77,7 @@ public class JavaApplication7 {
             System.out.println("    + Nama Barang : "+a1.riwayatPinjaman[0].b[i].getNamaBarang());
         }
         
-        System.out.println("Peminjam 2 : "+a2.nama);
+        System.out.println("Peminjam 2 : "+a2.getNama());
         System.out.println("    Jumlah Peminjaman : "+a3.getJumPinjaman());
         System.out.println("    Status      : "+a2.riwayatPinjaman[0].isStatusPeminjaman());
         System.out.println("    Barang yang dipinjam : ");
@@ -82,7 +85,7 @@ public class JavaApplication7 {
             System.out.println("    + Nama Barang : "+a2.riwayatPinjaman[0].b[i].getNamaBarang());
         }
         
-        System.out.println("Peminjam 3 : "+a3.nama);
+        System.out.println("Peminjam 3 : "+a3.getNama());
         System.out.println("    Jumlah Peminjaman : "+a3.getJumPinjaman());
         System.out.println("    Status      : "+a3.riwayatPinjaman[0].isStatusPeminjaman());
         System.out.println("    Barang yang dipinjam : ");

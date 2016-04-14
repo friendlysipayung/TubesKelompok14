@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication7;
+package model;
 
 /**
  *
  * @author ac
  */
 public abstract class Orang {
-    String nama;
-    int id;
+    private String nama;
+    private int id;
     String jabatan;
+    String username;
+    String password;
 
     public Orang(String nama, int id){
             this.nama = nama;

@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication7;
+package model;
+import model.Orang;
+import model.Anggota;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -12,7 +14,7 @@ import java.util.List;
  */
 public class Petugas extends Orang{
 //    private Arraylist<Anggota> listAnggota = new Arraylist<Anggota>();
-    Anggota[] peminjam = new Anggota[100];
+    private Anggota[] peminjam = new Anggota[100];
     private Orang petugas;
     private int jumPeminjam = 0;
     private String passwordPetugas;
@@ -30,4 +32,10 @@ public class Petugas extends Orang{
         peminjam[jumPeminjam] = a;
         jumPeminjam++;
     }
+
+    public Anggota getPeminjam(int i) {
+        return peminjam[i];
+    }
+    
+    
 }

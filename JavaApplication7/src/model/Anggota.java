@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication7;
+package model;
 
 import java.util.*;
+import java.util.function.Consumer;
 /**
  *
  * @author ac
  */
 public class Anggota extends Orang{
-    Peminjaman[] riwayatPinjaman = new Peminjaman[100];
+    private ArrayList<Peminjaman> riwayatPinjaman = new ArrayList();
     //private int jumAnggota = 0;
     private int jumPinjaman =0 ;
     private String passwordAnggota;
@@ -28,34 +29,38 @@ public class Anggota extends Orang{
     }
 
     public void CreatePeminjaman(int idPeminjaman,Date date){
-        riwayatPinjaman[jumPinjaman] = new Peminjaman(idPeminjaman,date);
-        riwayatPinjaman[jumPinjaman].setStatusPeminjaman(false);
+        Peminjaman e = new Peminjaman(idPeminjaman,date);
+        e.setStatusPeminjaman(false);
+        riwayatPinjaman.add(e);
         jumPinjaman++;
     }
 
     public Peminjaman GetPeminjamanByIndex (int indeks){
-        return riwayatPinjaman[indeks];
+        return riwayatPinjaman.get(indeks);
     }
 
     public Peminjaman GetPeminjamanByDate(Date tanggal){
         Peminjaman temp = null;
-        for (int i = 0; i < jumPinjaman; i++) {
-            if (riwayatPinjaman[i].getTanggalPinjam()==tanggal) {
-                temp = riwayatPinjaman[i]; 
+        for (int i = 0; i < jumPinjaman; i++) {      
             }
-        }
+            if (riwayatPinjaman.get(jumPinjaman).getTanggalPinjam()==tanggal) {
+                temp = riwayatPinjaman.get(jumPinjaman); 
+            }  
         return temp;
     }
 
     //belum paham 
     public void KembalikanPinjaman(int idPeminjaman){
         for (int i = 0; i < jumPinjaman; i++) {
-            if (riwayatPinjaman[i].getIdBarang() == idPeminjaman){
-                riwayatPinjaman[i].setStatusPeminjaman(true);
+            if (riwayatPinjaman.get(i).getIdBarang() == idPeminjaman){
+                riwayatPinjaman.get(i).setStatusPeminjaman(true);
             }
         }
     }
 
+    public Anggota(String s){
+        super.jabatan = s;
+    }
     public String getJabatan(){
         return "Anggota";
     }

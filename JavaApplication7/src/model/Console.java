@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication7;
+package model;
 
 /**
  *
  * @author User
  */
-class date {
+public class Console {
     
 }
